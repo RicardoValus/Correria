@@ -10,12 +10,12 @@
 }
 
 .view-toggle ion-button {
-  --color: var(--pulso-muted);
+  --color: var(--correria-muted);
   text-transform: none;
 }
 
 .view-toggle ion-button.active {
-  --color: var(--pulso-orange);
+  --color: var(--correria-orange);
   font-weight: 600;
 }
 
@@ -23,7 +23,7 @@
   position: relative;
   margin: 0 16px 80px;
   min-height: 720px;
-  border-left: 2px solid var(--pulso-border);
+  border-left: 2px solid var(--correria-border);
   padding-left: 48px;
 }
 
@@ -39,13 +39,13 @@
   left: -44px;
   width: 40px;
   font-size: 0.7rem;
-  color: var(--pulso-muted);
+  color: var(--correria-muted);
   text-align: right;
 }
 
 .hour-line {
   flex: 1;
-  border-bottom: 1px dashed var(--pulso-border);
+  border-bottom: 1px dashed var(--correria-border);
 }
 
 .event-block {
@@ -53,12 +53,12 @@
   left: 8px;
   right: 0;
   min-height: 36px;
-  border-radius: var(--pulso-radius-sm);
-  border-left: 4px solid var(--pulso-orange);
-  background: var(--pulso-surface-2);
+  border-radius: var(--correria-radius-sm);
+  border-left: 4px solid var(--correria-orange);
+  background: var(--correria-surface-2);
   padding: 6px 10px;
   text-align: left;
-  color: var(--pulso-text);
+  color: var(--correria-text);
   display: flex;
   flex-direction: column;
   gap: 2px;
@@ -69,10 +69,10 @@
 }
 
 .event-block small {
-  color: var(--pulso-muted);
+  color: var(--correria-muted);
 }
 
 .placeholder-view {
   margin-top: 12px;
-  color: var(--pulso-muted);
+  color: var(--correria-muted);
 }

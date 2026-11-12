@@ -36,16 +36,16 @@ addIcons({ backspaceOutline });
         padding: 0;
       }
       .key {
-        --color: var(--pulso-text);
+        --color: var(--correria-text);
         font-size: 1.35rem;
         font-weight: 600;
         height: 52px;
         margin: 4px 0;
-        --background: var(--pulso-surface-2);
-        --border-radius: var(--pulso-radius-sm);
+        --background: var(--correria-surface-2);
+        --border-radius: var(--correria-radius-sm);
       }
       .key-action {
-        --color: var(--pulso-muted);
+        --color: var(--correria-muted);
       }
     `,
   ],

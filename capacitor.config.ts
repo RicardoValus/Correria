@@ -1,15 +1,15 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.pulso.app',
-  appName: 'Pulso',
+  appId: 'com.correria.app',
+  appName: 'Correria',
   webDir: 'www',
   server: {
     androidScheme: 'https',
   },
   plugins: {
     LocalNotifications: {
-      smallIcon: 'ic_stat_icon_config_sample',
+      smallIcon: 'ic_stat_correria',
       iconColor: '#FF6B00',
     },
   },

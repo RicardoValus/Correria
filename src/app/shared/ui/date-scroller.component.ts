@@ -45,11 +45,11 @@ interface DayItem {
       .day-chip {
         flex: 0 0 auto;
         min-width: 52px;
-        border: 1px solid var(--pulso-border);
-        background: var(--pulso-surface);
-        border-radius: var(--pulso-radius);
+        border: 1px solid var(--correria-border);
+        background: var(--correria-surface);
+        border-radius: var(--correria-radius);
         padding: 8px 6px;
-        color: var(--pulso-muted);
+        color: var(--correria-muted);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -57,12 +57,12 @@ interface DayItem {
         cursor: pointer;
       }
       .day-chip.today .num {
-        color: var(--pulso-orange);
+        color: var(--correria-orange);
       }
       .day-chip.selected {
-        border-color: var(--pulso-orange);
+        border-color: var(--correria-orange);
         background: rgba(var(--ion-color-primary-rgb), 0.15);
-        color: var(--pulso-text);
+        color: var(--correria-text);
       }
       .weekday {
         font-size: 0.65rem;

@@ -14,46 +14,46 @@
 }
 
 ion-content {
-  --background: var(--pulso-bg);
+  --background: var(--correria-bg);
 }
 
-.pulso-card {
-  background: var(--pulso-surface);
-  border-radius: var(--pulso-radius);
+.correria-card {
+  background: var(--correria-surface);
+  border-radius: var(--correria-radius);
   padding: 16px;
   margin: 0 0 12px;
 }
 
-.pulso-section-title {
+.correria-section-title {
   font-size: 1.05rem;
   font-weight: 600;
   margin: 20px 0 12px;
-  color: var(--pulso-text);
+  color: var(--correria-text);
 }
 
-.pulso-muted {
-  color: var(--pulso-muted);
+.correria-muted {
+  color: var(--correria-muted);
   font-size: 0.85rem;
 }
 
-.pulso-chip {
+.correria-chip {
   display: inline-flex;
   align-items: center;
   gap: 4px;
   padding: 6px 12px;
   border-radius: 999px;
   font-size: 0.8rem;
-  background: var(--pulso-surface-2);
-  color: var(--pulso-muted);
+  background: var(--correria-surface-2);
+  color: var(--correria-muted);
   border: none;
 }
 
-.pulso-chip.active {
+.correria-chip.active {
   background: rgba(var(--ion-color-primary-rgb), 0.2);
-  color: var(--pulso-orange);
+  color: var(--correria-orange);
 }
 
-.pulso-badge {
+.correria-badge {
   display: inline-block;
   padding: 2px 8px;
   border-radius: 6px;
@@ -62,29 +62,29 @@ ion-content {
   text-transform: uppercase;
 }
 
-.pulso-badge.high {
+.correria-badge.high {
   background: rgba(239, 68, 68, 0.2);
   color: #f87171;
 }
 
-.pulso-badge.urgent {
+.correria-badge.urgent {
   background: rgba(255, 107, 0, 0.25);
   color: #ff8a3d;
 }
 
-.pulso-badge.success {
+.correria-badge.success {
   background: rgba(34, 197, 94, 0.2);
   color: #4ade80;
 }
 
-.pulso-progress {
+.correria-progress {
   height: 6px;
-  background: var(--pulso-surface-2);
+  background: var(--correria-surface-2);
   border-radius: 999px;
   overflow: hidden;
 }
 
-.pulso-progress > span {
+.correria-progress > span {
   display: block;
   height: 100%;
   background: linear-gradient(90deg, #ff6b00, #ff9a3d);

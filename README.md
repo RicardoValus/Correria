@@ -1,6 +1,6 @@
-# Pulso
+# Correria
 
-App pessoal offline-first (Ionic 8 + Angular + Capacitor 6) que unifica agenda, tarefas, financeiro e notas. Tema escuro com laranja como destaque.
+App pessoal offline-first (Ionic 8 + Angular + Capacitor 6) que unifica agenda, tarefas, financeiro e notas. Tema escuro com laranja; marca **Correria**.
 
 ## Rodar no browser
 
@@ -9,38 +9,33 @@ npm install
 npm start
 ```
 
-Abra `http://localhost:4200`. No web a persistência usa store em memória com `localStorage` (fallback do SQLite nativo).
+Abra `http://localhost:4200`. No web o SQLite roda via `jeep-sqlite` (`sql-wasm.wasm` em `assets/`), com fallback para store em memória se o WASM falhar.
 
 ## Build e Android
 
 ```bash
 npm run build
-npx cap add android   # só na primeira vez
 npx cap sync android
 npx cap open android
 ```
 
-Requisitos nativos: Android Studio, JDK 17+, SDK Android.
+`android/app/google-services.json` já está no projeto (Firebase `correria-app`).
 
-## Testes
+## Notificações
 
-```bash
-npm test
-```
+- **Locais** (`@capacitor/local-notifications`): lembretes/eventos/vencimentos — funcionam no Android; no web usam `Notification` da API do browser quando permitido.
+- **Push (FCM, plano Spark/free)**: projeto Firebase `correria-app` + apps Android/Web criados.
+  - Android: plugin `@capacitor/push-notifications` + `google-services.json`.
+  - Web: precisa da **VAPID key** em `environment.firebase.vapidKey` (Console Firebase → Project settings → Cloud Messaging → Web Push certificates).
 
-Os testes de domínio (ex.: previsão de saldo) ficam em `src/app/features/financeiro/domain/`.
+## Configuração ainda pendente
+
+1. **VAPID key** (push web) — gerar no Console e colar em `src/environments/environment*.ts`.
+2. **SHA-1/SHA-256 do keystore Android** — adicionar no app Firebase Android (útil para builds de release e alguns serviços Google).
+3. **Criptografia SQLite** — opcional: `encryption: true` + `dbEncryptionKey` (não commitar a chave).
+4. **Ícones/splash nativos finais** — launcher já usa o emblema “C”; splash default Capacitor ainda pode ser trocado.
+5. **Envio de push** — pelo Console Firebase (Cloud Messaging) ou Cloud Functions (Spark tem limites; envio manual pelo console é free).
 
 ## Arquitetura
 
-Ver `arquitetura.md`. Escopo do MVP (Fase 1) em `prompt.md`.
-
-## Configuração pendente
-
-Itens que você precisa configurar antes de produção/device:
-
-1. **Android** — `npx cap add android` + ícones/splash (`resources/`) + assinar o APK/AAB.
-2. **Criptografia SQLite** — em `environment.prod.ts`, defina `encryption: true` e `dbEncryptionKey` via mecanismo seguro (não commitar a chave).
-3. **Notificações locais** — só funcionam em device/emulador; conceda permissão na primeira execução.
-4. **Firebase / sync** — Fase 3; não há projeto Firebase nesta versão.
-5. **Biometria / PIN** — Fase 3.
-6. **Ícone de notificação Android** — ajustar `smallIcon` em `capacitor.config.ts`.
+Ver `arquitetura.md`. Escopo do MVP em `prompt.md`.

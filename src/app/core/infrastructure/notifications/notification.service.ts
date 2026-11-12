@@ -8,10 +8,22 @@ export class NotificationService {
 
   async init(): Promise<void> {
     if (!Capacitor.isNativePlatform()) {
+      if ('Notification' in window) {
+        const result = await Notification.requestPermission();
+        this.permissionGranted = result === 'granted';
+      }
       return;
     }
     const permission = await LocalNotifications.requestPermissions();
     this.permissionGranted = permission.display === 'granted';
+
+    await LocalNotifications.createChannel({
+      id: 'correria-default',
+      name: 'Correria',
+      description: 'Lembretes e avisos do Correria',
+      importance: 5,
+      visibility: 1,
+    });
   }
 
   async schedule(
@@ -20,12 +32,25 @@ export class NotificationService {
     body: string,
     at: Date
   ): Promise<void> {
-    if (!Capacitor.isNativePlatform() || !this.permissionGranted) {
-      return;
-    }
     if (at.getTime() <= Date.now()) {
       return;
     }
+
+    if (!Capacitor.isNativePlatform()) {
+      if (!this.permissionGranted || !('Notification' in window)) {
+        return;
+      }
+      const delay = at.getTime() - Date.now();
+      window.setTimeout(() => {
+        new Notification(title, { body, icon: 'assets/brand/icon-correria.png' });
+      }, delay);
+      return;
+    }
+
+    if (!this.permissionGranted) {
+      return;
+    }
+
     await LocalNotifications.schedule({
       notifications: [
         {
@@ -33,7 +58,9 @@ export class NotificationService {
           title,
           body,
           schedule: { at },
-          extra: { source: 'pulso' },
+          channelId: 'correria-default',
+          smallIcon: 'ic_stat_correria',
+          extra: { source: 'correria' },
         },
       ],
     });

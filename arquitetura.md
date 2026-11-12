@@ -1,10 +1,10 @@
-# Pulso — Arquitetura do App (Ionic + Capacitor)
+# Correria — Arquitetura do App (Ionic + Capacitor)
 
 > App pessoal, offline-first, que unifica agenda, tarefas, financeiro e notas em um só lugar. Tema escuro com laranja como cor de destaque, Material Design como base de componentes.
 
 ## Nome do projeto
 
-**Pulso** — remete a ritmo e energia (combina com o laranja do tema) e ao idiom "tomar o pulso" de algo, que é literalmente o que o app faz com rotina, agenda e dinheiro. Curto, duas sílabas, mesma pegada seca de "Resenha" e "Grana".
+**Correria** — remete a ritmo e energia (combina com o laranja do tema) e ao idiom "tomar o pulso" de algo, que é literalmente o que o app faz com rotina, agenda e dinheiro. Curto, duas sílabas, mesma pegada seca de "Resenha" e "Grana".
 
 Alternativas: Correria, Rotina, Norte, Trilha, Prumo.
 

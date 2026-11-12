@@ -7,7 +7,7 @@ type Row = Record<string, unknown>;
 
 export class MemoryDatabase {
   private tables = new Map<string, Row[]>();
-  private readonly storageKey = 'pulso_memory_db_v1';
+  private readonly storageKey = 'correria_memory_db_v1';
 
   async init(): Promise<void> {
     if (this.loadFromStorage()) {

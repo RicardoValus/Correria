@@ -2,7 +2,7 @@
   text-align: center;
   font-size: 2.2rem;
   font-weight: 700;
-  color: var(--pulso-orange);
+  color: var(--correria-orange);
   margin: 8px 0 16px;
 }
 
@@ -14,11 +14,11 @@
 }
 
 .category-tile {
-  border: 1px solid var(--pulso-border);
-  background: var(--pulso-surface);
-  border-radius: var(--pulso-radius);
+  border: 1px solid var(--correria-border);
+  background: var(--correria-surface);
+  border-radius: var(--correria-radius);
   padding: 12px 8px;
-  color: var(--pulso-text);
+  color: var(--correria-text);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,11 +27,11 @@
 }
 
 .category-tile.selected {
-  border-color: var(--tile-color, var(--pulso-orange));
-  box-shadow: 0 0 0 1px var(--tile-color, var(--pulso-orange));
+  border-color: var(--tile-color, var(--correria-orange));
+  box-shadow: 0 0 0 1px var(--tile-color, var(--correria-orange));
 }
 
 .category-tile ion-icon {
   font-size: 1.3rem;
-  color: var(--tile-color, var(--pulso-orange));
+  color: var(--tile-color, var(--correria-orange));
 }

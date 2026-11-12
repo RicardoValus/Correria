@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "764241890900",
+    "project_id": "correria-app",
+    "storage_bucket": "correria-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:764241890900:android:8c095d40b3df1f5650e7c1",
+        "android_client_info": {
+          "package_name": "com.correria.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsi9Ru2yKhWWugjsApgk2a1JrjtERI_VU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

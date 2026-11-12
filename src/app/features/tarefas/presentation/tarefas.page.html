@@ -17,7 +17,7 @@
     @for (chip of chips; track chip.id) {
       <button
         type="button"
-        class="pulso-chip"
+        class="correria-chip"
         [class.active]="filtro() === chip.id"
         (click)="setFiltro(chip.id)"
       >
@@ -27,7 +27,7 @@
   </div>
 
   @for (tarefa of filtradas(); track tarefa.id) {
-    <article class="task-card pulso-card">
+    <article class="task-card correria-card">
       <ion-checkbox
         [checked]="tarefa.concluida"
         (ionChange)="toggleTarefa(tarefa.id)"
@@ -37,7 +37,7 @@
           <h3 [class.done]="tarefa.concluida">{{ tarefa.titulo }}</h3>
           <app-priority-badge [priority]="tarefa.prioridade" />
         </div>
-        <p class="pulso-muted">Status: {{ chipLabel(tarefa.status) }}</p>
+        <p class="correria-muted">Status: {{ chipLabel(tarefa.status) }}</p>
       </div>
       <ion-button fill="clear" size="small" [routerLink]="['/tarefa', tarefa.id, 'kanban']">
         Detalhe

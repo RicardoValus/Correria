@@ -1,11 +1,24 @@
 .sub-header ion-title {
   font-weight: 400;
-  color: var(--pulso-muted);
+  color: var(--correria-muted);
+}
+
+.brand-mark {
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+.brand-logo {
+  display: block;
+  width: min(100%, 280px);
+  margin: 4px auto 18px;
 }
 
 .progress-card {
   background: linear-gradient(135deg, #ff6b00 0%, #c2410c 100%);
-  border-radius: var(--pulso-radius);
+  border-radius: var(--correria-radius);
   padding: 20px;
   margin-bottom: 16px;
   color: #fff;
@@ -22,11 +35,11 @@
   font-size: 1.25rem;
 }
 
-.progress-card .pulso-progress {
+.progress-card .correria-progress {
   background: rgba(255, 255, 255, 0.25);
 }
 
-.progress-card .pulso-progress > span {
+.progress-card .correria-progress > span {
   background: #fff;
 }
 
@@ -38,16 +51,16 @@
 }
 
 .balance-card {
-  background: var(--pulso-surface);
-  border-radius: var(--pulso-radius);
+  background: var(--correria-surface);
+  border-radius: var(--correria-radius);
   padding: 14px;
-  border: 1px solid var(--pulso-border);
+  border: 1px solid var(--correria-border);
 }
 
 .balance-card .label {
   display: block;
   font-size: 0.75rem;
-  color: var(--pulso-muted);
+  color: var(--correria-muted);
   margin-bottom: 4px;
 }
 
@@ -56,7 +69,7 @@
 }
 
 .muted-card strong {
-  color: var(--pulso-orange);
+  color: var(--correria-orange);
 }
 
 .section-list {
@@ -66,12 +79,12 @@
 
 .item-card {
   margin-bottom: 8px;
-  --background: var(--pulso-surface);
-  border-radius: var(--pulso-radius);
+  --background: var(--correria-surface);
+  border-radius: var(--correria-radius);
 }
 
 .link-row {
   --background: transparent;
-  color: var(--pulso-orange);
+  color: var(--correria-orange);
   font-size: 0.9rem;
 }

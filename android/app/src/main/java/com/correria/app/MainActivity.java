@@ -1,4 +1,4 @@
-package com.pulso.app;
+package com.correria.app;
 
 import com.getcapacitor.BridgeActivity;
 

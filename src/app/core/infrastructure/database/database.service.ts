@@ -31,15 +31,11 @@ export class DatabaseService {
   }
 
   private async doInit(): Promise<void> {
-    const platform = Capacitor.getPlatform();
-    if (platform === 'web') {
-      this.memory = new MemoryDatabase();
-      await this.memory.init();
-      this.ready = true;
-      return;
-    }
-
     try {
+      if (Capacitor.getPlatform() === 'web') {
+        await this.initWebStore();
+      }
+
       const consistency = await this.sqlite.checkConnectionsConsistency();
       const isConn = (await this.sqlite.isConnection(environment.dbName, false))
         .result;
@@ -58,13 +54,29 @@ export class DatabaseService {
       }
       await this.db.open();
       await this.runMigrations();
+      if (Capacitor.getPlatform() === 'web') {
+        await this.sqlite.saveToStore(environment.dbName);
+      }
       this.ready = true;
     } catch (error) {
-      console.warn('[Pulso] SQLite unavailable, using memory store', error);
+      console.warn('[Correria] SQLite unavailable, using memory store', error);
       this.memory = new MemoryDatabase();
       await this.memory.init();
       this.ready = true;
     }
+  }
+
+  private async initWebStore(): Promise<void> {
+    const { defineCustomElements } = await import('jeep-sqlite/loader');
+    defineCustomElements(window);
+    await customElements.whenDefined('jeep-sqlite');
+    if (!document.querySelector('jeep-sqlite')) {
+      const jeepEl = document.createElement('jeep-sqlite');
+      jeepEl.setAttribute('wasmPath', '/assets');
+      document.body.appendChild(jeepEl);
+      await customElements.whenDefined('jeep-sqlite');
+    }
+    await CapacitorSQLite.initWebStore();
   }
 
   private async runMigrations(): Promise<void> {
@@ -131,6 +143,9 @@ export class DatabaseService {
       throw new Error('Database not initialized');
     }
     const result = await this.db.run(sql, params as (string | number | null)[]);
+    if (Capacitor.getPlatform() === 'web') {
+      await this.sqlite.saveToStore(environment.dbName);
+    }
     return {
       changes: {
         changes: result.changes?.changes ?? 0,
@@ -149,5 +164,8 @@ export class DatabaseService {
       throw new Error('Database not initialized');
     }
     await this.db.execute(sql);
+    if (Capacitor.getPlatform() === 'web') {
+      await this.sqlite.saveToStore(environment.dbName);
+    }
   }
 }

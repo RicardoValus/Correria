@@ -10,7 +10,7 @@
 <ion-content class="ion-padding">
   <ion-list lines="none">
     @for (nota of notas(); track nota.id) {
-      <ion-item class="pulso-card note-item" [routerLink]="['/nota', nota.id]" button lines="none">
+      <ion-item class="correria-card note-item" [routerLink]="['/nota', nota.id]" button lines="none">
         <ion-label>
           <h3>
             @if (nota.fixada) {
@@ -19,7 +19,7 @@
             {{ nota.titulo }}
           </h3>
           <p>{{ preview(nota.corpo) }}</p>
-          <small class="pulso-muted">{{ formatShortDate(nota.updatedAt) }}</small>
+          <small class="correria-muted">{{ formatShortDate(nota.updatedAt) }}</small>
         </ion-label>
       </ion-item>
     }

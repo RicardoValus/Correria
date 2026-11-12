@@ -4,8 +4,8 @@
 }
 
 .menu-item {
-  --background: var(--pulso-surface);
-  border-radius: var(--pulso-radius);
+  --background: var(--correria-surface);
+  border-radius: var(--correria-radius);
   margin-bottom: 8px;
 }
 
@@ -15,10 +15,17 @@
 }
 
 .inline-card p {
-  color: var(--pulso-muted);
+  color: var(--correria-muted);
   font-size: 0.85rem;
 }
 
 .about p {
-  color: var(--pulso-muted);
+  color: var(--correria-muted);
+}
+
+.about-logo {
+  width: 88px;
+  height: auto;
+  margin-right: 12px;
+  align-self: center;
 }

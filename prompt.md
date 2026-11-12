@@ -1,6 +1,6 @@
-# Prompt — Projeto Pulso (Ionic + Capacitor)
+# Prompt — Projeto Correria (Ionic + Capacitor)
 
-Quero que você construa um app mobile chamado **Pulso**: um app pessoal, offline-first, que unifica agenda, tarefas, financeiro e notas em um só lugar. O app é single-user (sem backend/colaboração multiusuário na v1).
+Quero que você construa um app mobile chamado **Correria**: um app pessoal, offline-first, que unifica agenda, tarefas, financeiro e notas em um só lugar. O app é single-user (sem backend/colaboração multiusuário na v1).
 
 Siga à risca o arquivo `ARQUITETURA.md` (anexado neste mesmo projeto) para:
 - lista completa de funcionalidades (produtividade e financeiro);
@@ -22,7 +22,7 @@ Siga exatamente a estrutura de pastas descrita em `ARQUITETURA.md` (seção "Est
 ## Design
 - Tema escuro por padrão, laranja como cor primária de destaque (não como cor de fundo).
 - Material Design 3 como base de componentes, adaptado aos componentes do Ionic.
-- Referências visuais: vou anexar prints de apps de produtividade/financeiro como inspiração de layout. Use-os como referência de composição de tela (cards, calendário, dashboard financeiro, teclado numérico de lançamento rápido, kanban), não como algo para copiar pixel a pixel — adapte tudo à paleta laranja + dark do Pulso.
+- Referências visuais: vou anexar prints de apps de produtividade/financeiro como inspiração de layout. Use-os como referência de composição de tela (cards, calendário, dashboard financeiro, teclado numérico de lançamento rápido, kanban), não como algo para copiar pixel a pixel — adapte tudo à paleta laranja + dark do Correria.
 - Tab bar inferior fixa com 5 ícones: Central do dia, Agenda, `+` (captura rápida), Financeiro, Mais.
 
 ## Ordem sugerida de implementação (Fase 1 — MVP)

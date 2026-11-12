@@ -11,7 +11,7 @@ const LABELS: Record<TarefaPrioridade, string> = {
 @Component({
   selector: 'app-priority-badge',
   standalone: true,
-  template: `<span class="pulso-badge" [class]="badgeClass()">{{ label() }}</span>`,
+  template: `<span class="correria-badge" [class]="badgeClass()">{{ label() }}</span>`,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PriorityBadgeComponent {

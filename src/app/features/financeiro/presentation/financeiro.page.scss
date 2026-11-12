@@ -1,12 +1,12 @@
 .balance-hero h1 {
   margin: 4px 0 8px;
   font-size: 2rem;
-  color: var(--pulso-orange);
+  color: var(--correria-orange);
 }
 
 .balance-hero p {
   margin: 0;
-  color: var(--pulso-muted);
+  color: var(--correria-muted);
   font-size: 0.85rem;
 }
 
@@ -22,9 +22,9 @@
   align-items: center;
   gap: 10px;
   padding: 14px;
-  border-radius: var(--pulso-radius);
-  background: var(--pulso-surface);
-  border: 1px solid var(--pulso-border);
+  border-radius: var(--correria-radius);
+  background: var(--correria-surface);
+  border: 1px solid var(--correria-border);
 }
 
 .summary-card ion-icon {
@@ -34,7 +34,7 @@
 .summary-card span {
   display: block;
   font-size: 0.75rem;
-  color: var(--pulso-muted);
+  color: var(--correria-muted);
 }
 
 .summary-card.income ion-icon {
