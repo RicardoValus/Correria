@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tarefas" text="Voltar"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Kanban</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="editar()">Editar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  @if (tarefa(); as item) {
+    <article class="detail-card pulso-card">
+      <div class="head">
+        <h2>{{ item.titulo }}</h2>
+        <app-priority-badge [priority]="item.prioridade" />
+      </div>
+      @if (item.descricao) {
+        <p>{{ item.descricao }}</p>
+      }
+    </article>
+
+    <h3 class="pulso-section-title">Mover coluna</h3>
+    <div class="kanban-columns">
+      @for (col of colunas; track col.status) {
+        <ion-button
+          expand="block"
+          [fill]="item.status === col.status ? 'solid' : 'outline'"
+          color="primary"
+          (click)="moverPara(col.status)"
+        >
+          {{ col.titulo }}
+        </ion-button>
+      }
+    </div>
+  } @else {
+    <p class="pulso-muted">Tarefa não encontrada.</p>
+  }
+</ion-content>

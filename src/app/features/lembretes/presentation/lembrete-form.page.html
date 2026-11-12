@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/lembretes" text="Voltar"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ editingId() ? 'Editar lembrete' : 'Novo lembrete' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="form" (ngSubmit)="salvar()">
+    <ion-item>
+      <ion-input label="Título" labelPlacement="stacked" formControlName="titulo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Data e hora</ion-label>
+      <ion-datetime-button datetime="lembrete-dt"></ion-datetime-button>
+      <ion-modal [keepContentsMounted]="true">
+        <ng-template>
+          <ion-datetime id="lembrete-dt" formControlName="dataHora"></ion-datetime>
+        </ng-template>
+      </ion-modal>
+    </ion-item>
+    <ion-button expand="block" type="submit" class="ion-margin-top">Salvar</ion-button>
+  </form>
+</ion-content>

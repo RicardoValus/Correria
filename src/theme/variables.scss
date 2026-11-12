@@ -1,0 +1,76 @@
+:root {
+  --ion-color-primary: #ff6b00;
+  --ion-color-primary-rgb: 255, 107, 0;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #e05e00;
+  --ion-color-primary-tint: #ff7a1a;
+
+  --ion-color-secondary: #2dd4bf;
+  --ion-color-secondary-rgb: 45, 212, 191;
+  --ion-color-secondary-contrast: #000000;
+  --ion-color-secondary-contrast-rgb: 0, 0, 0;
+  --ion-color-secondary-shade: #28baa7;
+  --ion-color-secondary-tint: #42d8c5;
+
+  --ion-color-success: #22c55e;
+  --ion-color-success-rgb: 34, 197, 94;
+  --ion-color-success-contrast: #000000;
+  --ion-color-success-contrast-rgb: 0, 0, 0;
+  --ion-color-success-shade: #1ead53;
+  --ion-color-success-tint: #38cb6e;
+
+  --ion-color-warning: #f59e0b;
+  --ion-color-warning-rgb: 245, 158, 11;
+  --ion-color-warning-contrast: #000000;
+  --ion-color-warning-contrast-rgb: 0, 0, 0;
+  --ion-color-warning-shade: #d88b0a;
+  --ion-color-warning-tint: #f6a823;
+
+  --ion-color-danger: #ef4444;
+  --ion-color-danger-rgb: 239, 68, 68;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+  --ion-color-danger-shade: #d23c3c;
+  --ion-color-danger-tint: #f15757;
+
+  --ion-color-medium: #6b7280;
+  --ion-color-medium-rgb: 107, 114, 128;
+  --ion-color-medium-contrast: #ffffff;
+  --ion-color-medium-contrast-rgb: 255, 255, 255;
+  --ion-color-medium-shade: #5e6471;
+  --ion-color-medium-tint: #7a808d;
+
+  --ion-color-light: #1e1e1e;
+  --ion-color-light-rgb: 30, 30, 30;
+  --ion-color-light-contrast: #ffffff;
+  --ion-color-light-contrast-rgb: 255, 255, 255;
+  --ion-color-light-shade: #1a1a1a;
+  --ion-color-light-tint: #353535;
+
+  --pulso-bg: #121212;
+  --pulso-surface: #1e1e1e;
+  --pulso-surface-2: #2a2a2a;
+  --pulso-border: #333333;
+  --pulso-text: #f5f5f5;
+  --pulso-muted: #9ca3af;
+  --pulso-orange: #ff6b00;
+  --pulso-radius: 12px;
+  --pulso-radius-sm: 8px;
+
+  --ion-background-color: var(--pulso-bg);
+  --ion-background-color-rgb: 18, 18, 18;
+  --ion-text-color: var(--pulso-text);
+  --ion-text-color-rgb: 245, 245, 245;
+  --ion-toolbar-background: var(--pulso-bg);
+  --ion-item-background: var(--pulso-surface);
+  --ion-card-background: var(--pulso-surface);
+  --ion-tab-bar-background: #1a1a1a;
+  --ion-tab-bar-color: var(--pulso-muted);
+  --ion-tab-bar-color-selected: var(--pulso-orange);
+}
+
+body {
+  background: var(--pulso-bg);
+  color: var(--pulso-text);
+}

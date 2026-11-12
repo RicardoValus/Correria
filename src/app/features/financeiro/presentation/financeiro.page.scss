@@ -1,0 +1,68 @@
+.balance-hero h1 {
+  margin: 4px 0 8px;
+  font-size: 2rem;
+  color: var(--pulso-orange);
+}
+
+.balance-hero p {
+  margin: 0;
+  color: var(--pulso-muted);
+  font-size: 0.85rem;
+}
+
+.summary-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.summary-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px;
+  border-radius: var(--pulso-radius);
+  background: var(--pulso-surface);
+  border: 1px solid var(--pulso-border);
+}
+
+.summary-card ion-icon {
+  font-size: 1.4rem;
+}
+
+.summary-card span {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--pulso-muted);
+}
+
+.summary-card.income ion-icon {
+  color: var(--ion-color-success);
+}
+
+.summary-card.expense ion-icon {
+  color: var(--ion-color-danger);
+}
+
+.quick-links {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.link-card {
+  margin: 0;
+}
+
+.tx-item {
+  margin-bottom: 8px;
+}
+
+.tx-item .expense {
+  color: #f87171;
+}
+
+.tx-item span:not(.expense) {
+  color: #4ade80;
+}

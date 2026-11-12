@@ -1,0 +1,77 @@
+.sub-header ion-title {
+  font-weight: 400;
+  color: var(--pulso-muted);
+}
+
+.progress-card {
+  background: linear-gradient(135deg, #ff6b00 0%, #c2410c 100%);
+  border-radius: var(--pulso-radius);
+  padding: 20px;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.progress-label {
+  margin: 0 0 4px;
+  opacity: 0.9;
+  font-size: 0.85rem;
+}
+
+.progress-card h2 {
+  margin: 0 0 12px;
+  font-size: 1.25rem;
+}
+
+.progress-card .pulso-progress {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.progress-card .pulso-progress > span {
+  background: #fff;
+}
+
+.balance-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.balance-card {
+  background: var(--pulso-surface);
+  border-radius: var(--pulso-radius);
+  padding: 14px;
+  border: 1px solid var(--pulso-border);
+}
+
+.balance-card .label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--pulso-muted);
+  margin-bottom: 4px;
+}
+
+.balance-card strong {
+  font-size: 1.05rem;
+}
+
+.muted-card strong {
+  color: var(--pulso-orange);
+}
+
+.section-list {
+  background: transparent;
+  padding: 0;
+}
+
+.item-card {
+  margin-bottom: 8px;
+  --background: var(--pulso-surface);
+  border-radius: var(--pulso-radius);
+}
+
+.link-row {
+  --background: transparent;
+  color: var(--pulso-orange);
+  font-size: 0.9rem;
+}

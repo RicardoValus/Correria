@@ -1,0 +1,37 @@
+.amount-display {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--pulso-orange);
+  margin: 8px 0 16px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.category-tile {
+  border: 1px solid var(--pulso-border);
+  background: var(--pulso-surface);
+  border-radius: var(--pulso-radius);
+  padding: 12px 8px;
+  color: var(--pulso-text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+}
+
+.category-tile.selected {
+  border-color: var(--tile-color, var(--pulso-orange));
+  box-shadow: 0 0 0 1px var(--tile-color, var(--pulso-orange));
+}
+
+.category-tile ion-icon {
+  font-size: 1.3rem;
+  color: var(--tile-color, var(--pulso-orange));
+}

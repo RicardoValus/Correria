@@ -1,0 +1,30 @@
+.pulso-tab-bar {
+  --background: #141414;
+  border-top: 1px solid var(--pulso-border);
+  height: 64px;
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+ion-tab-button {
+  --color: var(--pulso-muted);
+  --color-selected: var(--pulso-orange);
+}
+
+.tab-add {
+  max-width: 72px;
+  pointer-events: auto;
+}
+
+.add-fab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin-top: -20px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #ff7a1a, #ff6b00);
+  box-shadow: 0 4px 16px rgba(255, 107, 0, 0.45);
+  color: #fff;
+  font-size: 1.6rem;
+}

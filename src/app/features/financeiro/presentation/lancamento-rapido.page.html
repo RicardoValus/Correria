@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/financeiro" text="Voltar"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Gasto rápido</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="amount-display">{{ valorFormatado() }}</div>
+
+  <h3 class="pulso-section-title">Categoria</h3>
+  <div class="category-grid">
+    @for (cat of categorias(); track cat.id) {
+      <button
+        type="button"
+        class="category-tile"
+        [class.selected]="categoriaSelecionada() === cat.id"
+        [style.--tile-color]="cat.cor"
+        (click)="selecionarCategoria(cat.id)"
+      >
+        <ion-icon name="pricetag-outline"></ion-icon>
+        <span>{{ cat.nome }}</span>
+      </button>
+    }
+  </div>
+
+  <app-numeric-keypad (digit)="onDigit($event)" (backspace)="onBackspace()" />
+
+  <ion-button expand="block" color="primary" class="ion-margin-top" (click)="salvar()">
+    Salvar lançamento
+  </ion-button>
+</ion-content>

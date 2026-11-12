@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tarefas" text="Voltar"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ editingId() ? 'Editar tarefa' : 'Nova tarefa' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="form" (ngSubmit)="salvar()">
+    <ion-item>
+      <ion-input label="Título" labelPlacement="stacked" formControlName="titulo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Descrição" labelPlacement="stacked" formControlName="descricao"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-select label="Prioridade" labelPlacement="stacked" formControlName="prioridade">
+        <ion-select-option value="urgente">Urgente</ion-select-option>
+        <ion-select-option value="alta">Alta</ion-select-option>
+        <ion-select-option value="normal">Normal</ion-select-option>
+        <ion-select-option value="baixa">Baixa</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-select label="Status" labelPlacement="stacked" formControlName="status">
+        <ion-select-option value="a_fazer">A fazer</ion-select-option>
+        <ion-select-option value="em_andamento">Em andamento</ion-select-option>
+        <ion-select-option value="em_revisao">Em revisão</ion-select-option>
+        <ion-select-option value="concluida">Concluída</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-button expand="block" type="submit" class="ion-margin-top">Salvar</ion-button>
+  </form>
+</ion-content>

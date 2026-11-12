@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Agenda</ion-title>
+  </ion-toolbar>
+  <ion-toolbar class="view-toolbar">
+    <div class="view-toggle">
+      <ion-button
+        size="small"
+        fill="clear"
+        [class.active]="viewMode() === 'day'"
+        (click)="setView('day')"
+      >
+        Dia
+      </ion-button>
+      <ion-button
+        size="small"
+        fill="clear"
+        [class.active]="viewMode() === 'week'"
+        (click)="setView('week')"
+      >
+        Semana
+      </ion-button>
+      <ion-button
+        size="small"
+        fill="clear"
+        [class.active]="viewMode() === 'month'"
+        (click)="setView('month')"
+      >
+        Mês
+      </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-date-scroller [selected]="selectedDate()" (dateChange)="onDateChange($event)" />
+
+  @if (viewMode() === 'day') {
+    <div class="timeline">
+      @for (hour of [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]; track hour) {
+        <div class="hour-row">
+          <span class="hour-label">{{ hour }}:00</span>
+          <span class="hour-line"></span>
+        </div>
+      }
+      @for (evento of eventos(); track evento.id) {
+        <button
+          type="button"
+          class="event-block"
+          [style.top.%]="eventTop(evento.dataHoraInicio)"
+          [style.height.%]="eventHeight(evento.dataHoraInicio, evento.dataHoraFim)"
+          [style.borderColor]="evento.cor"
+          [routerLink]="['/evento', evento.id]"
+        >
+          <strong>{{ evento.titulo }}</strong>
+          <small>{{ formatTime(evento.dataHoraInicio) }}</small>
+        </button>
+      }
+    </div>
+  } @else if (viewMode() === 'week') {
+    <div class="placeholder-view pulso-card ion-margin">
+      <p>Visão semanal simplificada — {{ eventos().length }} evento(s) no dia selecionado.</p>
+    </div>
+  } @else {
+    <div class="placeholder-view pulso-card ion-margin">
+      <p>Visão mensal simplificada — use o seletor de datas acima.</p>
+    </div>
+  }
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button color="primary" (click)="openNovoEvento()">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

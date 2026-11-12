@@ -1,0 +1,78 @@
+.view-toolbar {
+  --min-height: 44px;
+}
+
+.view-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  width: 100%;
+}
+
+.view-toggle ion-button {
+  --color: var(--pulso-muted);
+  text-transform: none;
+}
+
+.view-toggle ion-button.active {
+  --color: var(--pulso-orange);
+  font-weight: 600;
+}
+
+.timeline {
+  position: relative;
+  margin: 0 16px 80px;
+  min-height: 720px;
+  border-left: 2px solid var(--pulso-border);
+  padding-left: 48px;
+}
+
+.hour-row {
+  display: flex;
+  align-items: center;
+  height: 42px;
+  position: relative;
+}
+
+.hour-label {
+  position: absolute;
+  left: -44px;
+  width: 40px;
+  font-size: 0.7rem;
+  color: var(--pulso-muted);
+  text-align: right;
+}
+
+.hour-line {
+  flex: 1;
+  border-bottom: 1px dashed var(--pulso-border);
+}
+
+.event-block {
+  position: absolute;
+  left: 8px;
+  right: 0;
+  min-height: 36px;
+  border-radius: var(--pulso-radius-sm);
+  border-left: 4px solid var(--pulso-orange);
+  background: var(--pulso-surface-2);
+  padding: 6px 10px;
+  text-align: left;
+  color: var(--pulso-text);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.event-block strong {
+  font-size: 0.85rem;
+}
+
+.event-block small {
+  color: var(--pulso-muted);
+}
+
+.placeholder-view {
+  margin-top: 12px;
+  color: var(--pulso-muted);
+}

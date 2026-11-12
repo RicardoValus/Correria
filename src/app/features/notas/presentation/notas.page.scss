@@ -1,0 +1,15 @@
+.note-item {
+  margin-bottom: 10px;
+}
+
+.note-item h3 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.note-item p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

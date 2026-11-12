@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/mais" text="Voltar"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Tarefas</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/tarefa/nova">
+        <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="chips">
+    @for (chip of chips; track chip.id) {
+      <button
+        type="button"
+        class="pulso-chip"
+        [class.active]="filtro() === chip.id"
+        (click)="setFiltro(chip.id)"
+      >
+        {{ chip.label }}
+      </button>
+    }
+  </div>
+
+  @for (tarefa of filtradas(); track tarefa.id) {
+    <article class="task-card pulso-card">
+      <ion-checkbox
+        [checked]="tarefa.concluida"
+        (ionChange)="toggleTarefa(tarefa.id)"
+      ></ion-checkbox>
+      <div class="task-body">
+        <div class="task-head">
+          <h3 [class.done]="tarefa.concluida">{{ tarefa.titulo }}</h3>
+          <app-priority-badge [priority]="tarefa.prioridade" />
+        </div>
+        <p class="pulso-muted">Status: {{ chipLabel(tarefa.status) }}</p>
+      </div>
+      <ion-button fill="clear" size="small" [routerLink]="['/tarefa', tarefa.id, 'kanban']">
+        Detalhe
+      </ion-button>
+    </article>
+  }
+</ion-content>

@@ -1,0 +1,30 @@
+<ion-tabs>
+  <ion-router-outlet></ion-router-outlet>
+  <ion-tab-bar slot="bottom" class="pulso-tab-bar">
+    <ion-tab-button tab="central" href="/tabs/central">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Central</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="agenda" href="/tabs/agenda">
+      <ion-icon name="calendar-outline"></ion-icon>
+      <ion-label>Agenda</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button class="tab-add" (click)="openQuickAdd()">
+      <span class="add-fab" aria-label="Adicionar">
+        <ion-icon name="add-outline"></ion-icon>
+      </span>
+    </ion-tab-button>
+
+    <ion-tab-button tab="financeiro" href="/tabs/financeiro">
+      <ion-icon name="wallet-outline"></ion-icon>
+      <ion-label>Financeiro</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="mais" href="/tabs/mais">
+      <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+      <ion-label>Mais</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

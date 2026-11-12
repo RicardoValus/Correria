@@ -1,0 +1,8 @@
+.reminder-item {
+  margin-bottom: 8px;
+}
+
+.reminder-item h3.done {
+  text-decoration: line-through;
+  color: var(--pulso-muted);
+}

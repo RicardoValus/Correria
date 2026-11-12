@@ -1,0 +1,34 @@
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.task-card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 12px;
+  align-items: center;
+}
+
+.task-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.task-head h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.task-head h3.done {
+  text-decoration: line-through;
+  color: var(--pulso-muted);
+}
+
+.task-body p {
+  margin: 4px 0 0;
+}

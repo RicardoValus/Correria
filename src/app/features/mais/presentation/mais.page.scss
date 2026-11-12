@@ -1,0 +1,24 @@
+.menu-list {
+  background: transparent;
+  margin-bottom: 16px;
+}
+
+.menu-item {
+  --background: var(--pulso-surface);
+  border-radius: var(--pulso-radius);
+  margin-bottom: 8px;
+}
+
+.inline-card h3 {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.inline-card p {
+  color: var(--pulso-muted);
+  font-size: 0.85rem;
+}
+
+.about p {
+  color: var(--pulso-muted);
+}

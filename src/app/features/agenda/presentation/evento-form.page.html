@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/agenda" text="Voltar"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ editingId() ? 'Editar evento' : 'Novo evento' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="form" (ngSubmit)="salvar()">
+    <ion-item>
+      <ion-input label="Título" labelPlacement="stacked" formControlName="titulo"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Início</ion-label>
+      <ion-datetime-button datetime="inicio"></ion-datetime-button>
+      <ion-modal [keepContentsMounted]="true">
+        <ng-template>
+          <ion-datetime id="inicio" formControlName="dataHoraInicio"></ion-datetime>
+        </ng-template>
+      </ion-modal>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Fim</ion-label>
+      <ion-datetime-button datetime="fim"></ion-datetime-button>
+      <ion-modal [keepContentsMounted]="true">
+        <ng-template>
+          <ion-datetime id="fim" formControlName="dataHoraFim"></ion-datetime>
+        </ng-template>
+      </ion-modal>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="Cor (hex)" labelPlacement="stacked" formControlName="cor"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        label="Descrição"
+        labelPlacement="stacked"
+        formControlName="descricao"
+      ></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" type="submit" class="ion-margin-top">Salvar</ion-button>
+  </form>
+</ion-content>

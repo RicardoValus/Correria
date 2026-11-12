@@ -1,0 +1,100 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Pulso</ion-title>
+  </ion-toolbar>
+  <ion-toolbar class="sub-header">
+    <ion-title size="small">{{ headerDate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <section class="progress-card">
+    <p class="progress-label">Progresso de hoje</p>
+    <h2>{{ progresso().concluidas }} de {{ progresso().total }} tarefas</h2>
+    <div class="pulso-progress">
+      <span [style.width.%]="progresso().percentual"></span>
+    </div>
+  </section>
+
+  <div class="balance-row">
+    <article class="balance-card">
+      <span class="label">Saldo atual</span>
+      <strong>{{ formatCurrency(financeiro().saldoAtual) }}</strong>
+    </article>
+    <article class="balance-card muted-card">
+      <span class="label">Previsto fim do mês</span>
+      <strong>{{ formatCurrency(financeiro().saldoPrevistoFimMes) }}</strong>
+    </article>
+  </div>
+
+  <h3 class="pulso-section-title">Tarefas de hoje</h3>
+  @if (tarefasHoje().length === 0) {
+    <p class="pulso-muted">Nenhuma tarefa para hoje.</p>
+  } @else {
+    <ion-list lines="none" class="section-list">
+      @for (tarefa of tarefasHoje(); track tarefa.id) {
+        <ion-item class="pulso-card item-card" [routerLink]="['/tarefa', tarefa.id, 'kanban']" button>
+          <app-priority-badge [priority]="tarefa.prioridade" slot="start" />
+          <ion-label>
+            <h4>{{ tarefa.titulo }}</h4>
+          </ion-label>
+          <ion-icon name="chevron-forward-outline" slot="end" color="medium"></ion-icon>
+        </ion-item>
+      }
+    </ion-list>
+    <ion-item button detail routerLink="/tarefas" lines="none" class="link-row">
+      <ion-label>Ver todas as tarefas</ion-label>
+    </ion-item>
+  }
+
+  <h3 class="pulso-section-title">Compromissos</h3>
+  @if (compromissos().length === 0) {
+    <p class="pulso-muted">Dia livre na agenda.</p>
+  } @else {
+    <ion-list lines="none" class="section-list">
+      @for (evento of compromissos(); track evento.id) {
+        <ion-item class="pulso-card item-card" [routerLink]="['/evento', evento.id]">
+          <ion-icon name="time-outline" slot="start" color="primary"></ion-icon>
+          <ion-label>
+            <h4>{{ evento.titulo }}</h4>
+            <p>{{ formatTime(evento.dataHoraInicio) }}</p>
+          </ion-label>
+        </ion-item>
+      }
+    </ion-list>
+  }
+
+  <h3 class="pulso-section-title">Contas a vencer</h3>
+  @if (contas().length === 0) {
+    <p class="pulso-muted">Nenhuma conta vence hoje.</p>
+  } @else {
+    <ion-list lines="none" class="section-list">
+      @for (conta of contas(); track conta.id) {
+        <ion-item class="pulso-card item-card">
+          <ion-icon name="wallet-outline" slot="start" color="danger"></ion-icon>
+          <ion-label>
+            <h4>{{ conta.descricao }}</h4>
+            <p>{{ formatCurrency(conta.valor) }}</p>
+          </ion-label>
+        </ion-item>
+      }
+    </ion-list>
+  }
+
+  <h3 class="pulso-section-title">Lembretes</h3>
+  @if (lembretes().length === 0) {
+    <p class="pulso-muted">Sem lembretes ativos.</p>
+  } @else {
+    <ion-list lines="none" class="section-list">
+      @for (lembrete of lembretes(); track lembrete.id) {
+        <ion-item class="pulso-card item-card" [routerLink]="['/lembrete', lembrete.id]">
+          <ion-icon name="flag-outline" slot="start" color="warning"></ion-icon>
+          <ion-label>
+            <h4>{{ lembrete.titulo }}</h4>
+            <p>{{ formatTime(lembrete.dataHora) }}</p>
+          </ion-label>
+        </ion-item>
+      }
+    </ion-list>
+  }
+</ion-content>

@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/mais" text="Voltar"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Notas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list lines="none">
+    @for (nota of notas(); track nota.id) {
+      <ion-item class="pulso-card note-item" [routerLink]="['/nota', nota.id]" button lines="none">
+        <ion-label>
+          <h3>
+            @if (nota.fixada) {
+              <ion-icon name="pin-outline" color="warning"></ion-icon>
+            }
+            {{ nota.titulo }}
+          </h3>
+          <p>{{ preview(nota.corpo) }}</p>
+          <small class="pulso-muted">{{ formatShortDate(nota.updatedAt) }}</small>
+        </ion-label>
+      </ion-item>
+    }
+  </ion-list>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button color="primary" (click)="novaNota()">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

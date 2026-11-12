@@ -1,0 +1,16 @@
+.detail-card .head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.detail-card h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.kanban-columns {
+  display: grid;
+  gap: 8px;
+}
